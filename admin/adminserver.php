@@ -30,3 +30,6 @@ if ($admin == 1) {
 		}
 	}
 }
+elseif($admin==2){
+	
+}
