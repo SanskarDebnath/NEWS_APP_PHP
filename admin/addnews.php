@@ -16,7 +16,7 @@
             <textarea name="About_news" id ="about_news" placeholder="Insert the details of the news here"></textarea><br>
 
             <label>Select the Date of the News</label>
-            <input type="Date" name="news_date">
+            <input type="Date" name="news_date" id="news_date">
         </div>
     </form>
 </body>
