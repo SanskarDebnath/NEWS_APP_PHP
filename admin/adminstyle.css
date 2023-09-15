@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4dfdf;
+    margin: 0;
+    padding: 0;
+}
+.add_news {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #d3d3d3;
+}
+.add_news label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.add_news input[type="text"],
+.add_news textarea,
+.add_news input[type="date"] {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #1b0303;
+    border-radius: 20px;
+}
+.add_news input[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.add_news input[type="submit"]:hover {
+    background-color: #45a049;
+}
+.add_news textarea {
+    height: 150px;
+}
