@@ -66,11 +66,10 @@ if (mysqli_num_rows($result) > 0) {
             $randomString = generateRandomString();
             // echo $randomString
             ?>
-            <input type="hidden" name="image_id" id="image_id" value="<?php echo$randomString; ?>">
+            <input type="hidden" name="image_id" id="image_id" value="<?php echo$randomString; ?>"><br><br>
+            <input type="submit" name="NEWS_SUBMIT" value="SUBMIT" class="NEWS_SUBMIT" id="NEWS_SUBMIT">
 
         </div>
-
-
     </form>
 </body>
 <script src="adminscripts.js"></script>
