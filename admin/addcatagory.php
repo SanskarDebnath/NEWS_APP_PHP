@@ -30,7 +30,7 @@
         .category input[type="number"],
         .category input[type="text"],
         .category input[type="submit"] {
-            width: 100%;
+            width: 95%;
             padding: 10px;
             margin-bottom: 15px;
             border: 1px solid #ccc;
@@ -41,8 +41,9 @@
             background-color: #4CAF50;
             color: #fff;
             border: none;
-            border-radius: 4px;
+            border-radius: 40px;
             cursor: pointer;
+            width: 100px;
         }
 
         .category input[type="submit"]:hover {
@@ -57,6 +58,7 @@
             <label>Select the Category ID</label>
             <input type="number" name="CIN" id="CIN">
             <br>
+            <label>Select the catagory name</label>
             <input type="text" id="catagory" placeholder="Enter the Category Name"><br>
             <input type="submit" name="CINsubmit" id="CINsubmit" value="SUBMIT">
         </form>
@@ -64,6 +66,7 @@
 </body>
 
 <script>
+
     const CINInput = document.getElementById("CIN");
     const catagoryInput = document.getElementById("catagory");
     const form = document.getElementById("method_form");
@@ -76,6 +79,7 @@
             CINInput.value = "";
             event.preventDefault();
         }
+        
         const catagoryValue = catagoryInput.value;
         if (catagoryValue.length > maxCharacters) {
             alert("Category Name cannot exceed " + maxCharacters + " characters.");
@@ -86,6 +90,7 @@
             event.preventDefault();
         }
     });
+
 </script>
 
 
