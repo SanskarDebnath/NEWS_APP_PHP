@@ -25,16 +25,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
     newsNameInput.addEventListener("input", function() {
         var value = newsNameInput.value;
-        if (value.length > 70) {
-            alert("News headline can't exceed 70 characters. Excess characters will be trimmed.");
-            newsNameInput.value = value.slice(0, 70);
+        if (value.length > 100) {
+            alert("News headline can't exceed 100 characters");
+            newsNameInput.value = value.slice(0, 100);
         }
     });
 
     aboutNewsInput.addEventListener("input", function() {
         var value = aboutNewsInput.value;
         if (value.length > 800) {
-            alert("News description can't exceed 600 characters. Excess characters will be trimmed.");
+            alert("News description can't exceed 800 characters");
             aboutNewsInput.value = value.slice(0, 800);
         }
     });

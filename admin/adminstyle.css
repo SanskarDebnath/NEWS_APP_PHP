@@ -1,16 +1,16 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4dfdf;
+    background-color: #eb7959;
     margin: 0;
     padding: 0;
 }
 .add_news {
-    max-width: 700px;
+    max-width: 1000px;
     margin: 0 auto;
     background-color: #fff;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px #d3d3d3;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #0e0e00;
 }
 .add_news label {
     display: block;
@@ -41,26 +41,22 @@ body {
     height: 150px;
 }
 
-
-/* Style the select input */
 .catagory {
     width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 40px;
     margin-bottom: 10px;
-    font-size: 16px; /* Adjust the font size as needed */
-    background-color: #fff; /* Background color */
-    color: #333; /* Text color */
+    font-size: 16px;
+    background-color: #fff;
+    color: #333;
 }
 
-/* Style the select input when it's focused (clicked) */
 .catagory:focus {
-    outline: none; /* Remove the default focus outline */
-    border-color: #007BFF; /* Change the border color when focused */
+    outline: none;
+    border-color: #007BFF;
 }
 
-/* Style the container for uploading images */
 .UploadImage {
     max-width: 400px;
     margin: 0 auto;
@@ -70,7 +66,6 @@ body {
     box-shadow: 0px 0px 10px #d3d3d3;
 }
 
-/* Style file input */
 .UploadImage input[type="file"] {
     margin-top: 10px;
     margin-bottom: 10px;
