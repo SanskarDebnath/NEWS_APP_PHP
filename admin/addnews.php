@@ -50,7 +50,7 @@ if (mysqli_num_rows($result) > 0) {
 
         <div class="UploadImage" id="UploadImage">
             <label>Select JPG/JPEG/PNG file for the News</label><br>
-            <input type="File" name="News_Image" id="News_Image">
+            <input type="File" name="News_Image" id="News_Image" accept=".jpg, .jpeg, .png" onchange="checkFileSize(this)">
 
             <?php
             function generateRandomString($length = 15) {
@@ -73,5 +73,23 @@ if (mysqli_num_rows($result) > 0) {
     </form>
 </body>
 <script src="adminscripts.js"></script>
+
+<!-- <script>
+    function checkFileSize(input) {
+    const file = input.files[0]; // Get the selected file
+    if (!file) {
+        alert("Please select a file.");
+        input.value = ''; // Clear the input
+        return;
+    }
+
+    const maxSizeInBytes = 2 * 1024 * 1024; // 2MB
+
+    if (file.size > maxSizeInBytes) {
+        alert("File size exceeds the maximum allowed size (2MB). Please select a smaller file.");
+        input.value = ''; // Clear the input
+    }
+}
+</script> -->
 
 </html>
