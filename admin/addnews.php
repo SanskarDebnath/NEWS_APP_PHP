@@ -35,7 +35,7 @@ if (mysqli_num_rows($result) > 0) {
             <input type="Date" name="news_date" id="news_date">
         </div>
 
-        <div class="Catgory&photos">
+        <div class="Catgory&photos" id="Catgory&photos">
             <label>Select the Catagory of the News</label>
             <select name="catagory" class="catagory">
                 <?php echo $optionvalues; ?>
@@ -48,7 +48,7 @@ if (mysqli_num_rows($result) > 0) {
             <input type="text" name="auth_name" id="auth_name">
         </div>
 
-        <div class="UploadImage">
+        <div class="UploadImage" id="UploadImage">
             <label>Select JPG/JPEG/PNG file for the News</label><br>
             <input type="File" name="News_Image" id="News_Image">
 
@@ -67,9 +67,9 @@ if (mysqli_num_rows($result) > 0) {
             // echo $randomString
             ?>
             <input type="hidden" name="image_id" id="image_id" value="<?php echo$randomString; ?>"><br><br>
-            <input type="submit" name="NEWS_SUBMIT" value="SUBMIT" class="NEWS_SUBMIT" id="NEWS_SUBMIT">
 
-        </div>
+        </div><br>
+        <center><input type="submit" name="NEWS_SUBMIT" value="SUBMIT" class="NEWS_SUBMIT" id="NEWS_SUBMIT"></center>
     </form>
 </body>
 <script src="adminscripts.js"></script>
