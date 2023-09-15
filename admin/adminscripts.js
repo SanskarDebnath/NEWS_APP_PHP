@@ -12,7 +12,6 @@ function checkFileSize(input) {
     }
 
     const maxSizeInBytes = 2 * 1024 * 1024; // 2MB
-
     if (file.size > maxSizeInBytes) {
         alert("File size exceeds the maximum allowed size (2MB). Please select a smaller file.");
         input.value = '';
