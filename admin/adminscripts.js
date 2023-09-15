@@ -33,9 +33,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     aboutNewsInput.addEventListener("input", function() {
         var value = aboutNewsInput.value;
-        if (value.length > 800) {
-            alert("News description can't exceed 800 characters");
-            aboutNewsInput.value = value.slice(0, 800);
+        if (value.length > 2501) {
+            alert("News description can't exceed 2500 characters");
+            aboutNewsInput.value = value.slice(0, 2500);
         }
     });
 
