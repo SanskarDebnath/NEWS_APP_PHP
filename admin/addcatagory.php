@@ -49,6 +49,50 @@
         .category input[type="submit"]:hover {
             background-color: #45a049;
         }
+
+        .designed_catagory {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px #d3d3d3;
+        }
+
+        .table_head th {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .table_head td {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .table_head tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .table_head {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table_head+p {
+            margin-top: 20px;
+        }
+
+        .table_head td a {
+            color: #007bff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .table_head td a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 
@@ -63,6 +107,44 @@
 
             <input type="submit" name="CINsubmit" id="CINsubmit" value="SUBMIT">
         </form>
+    </div><br><br>
+
+    <center><label>Recent Catagories</label></center><br>
+
+    <div class="designed_catagory" id="designed_catagory">
+
+        <?php
+        include '../connection.php'; ?>
+        <table class="table_head">
+            <thead>
+                <tr>
+                    <th>Catagory ID</th>
+                    <th>Catagory Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+
+                $sql = "SELECT * FROM master_catagory";
+                $result = mysqli_query($connection, $sql);
+                if (mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) { ?>
+
+
+                        <tr>
+                            <td>
+                                <?php echo $row['catagory_id']; ?>
+                            </td>
+                            <td>
+                                <?php echo $row['catagory_name']; ?>
+                            </td>
+                        </tr>
+
+                        <?php
+                    }
+                }
+
+                ?>
     </div>
 </body>
 
@@ -80,7 +162,7 @@
             CINInput.value = "";
             event.preventDefault();
         }
-        
+
         const catagoryValue = catagoryInput.value;
         if (catagoryValue.length > maxCharacters) {
             alert("Category Name cannot exceed " + maxCharacters + " characters.");
