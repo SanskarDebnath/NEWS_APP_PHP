@@ -33,7 +33,7 @@ if (mysqli_num_rows($result) > 0) {
 </head>
 
 <body>
-    <form action="adminserver.php?news=2" method="POST" class="add_news" id="add_news">
+    <form action="adminserver.php?news=2" method="POST" class="add_news" id="add_news" enctype='multipart/form-data'>
 
         <div class="About">
             <label>Write the Headline of the News</label>
@@ -65,7 +65,9 @@ if (mysqli_num_rows($result) > 0) {
 
         <div class="UploadImage" id="UploadImage">
             <label>Select JPG/JPEG/PNG file for the News</label><br>
-            <input type="File" name="News_Image" id="News_Image" accept=".jpg, .jpeg, .png" onchange="checkFileSize(this)">
+            <input type="file" name="file" id="News_Image" accept=".jpg, .jpeg, .png" onchange="checkFileSize(this)">
+
+
 
             <?php
             function generateRandomString($length = 15) {
@@ -86,7 +88,9 @@ if (mysqli_num_rows($result) > 0) {
         </div><br>
 
 
-        <center><input type="submit" name="NEWS_SUBMIT" value="SUBMIT" class="NEWS_SUBMIT" id="NEWS_SUBMIT"></center>
+        <center>
+            <input type="submit" name="NEWS_SUBMIT" value="SUBMIT" class="NEWS_SUBMIT" id="NEWS_SUBMIT">
+        </center>
     </form>
 </body>
 <script src="adminscripts.js"></script>

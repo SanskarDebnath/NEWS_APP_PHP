@@ -1,6 +1,7 @@
 <?php
 include '../connection.php';
 $admin = $_GET['news'];
+
 if ($admin == 1) {
 	if (isset($_POST['CINsubmit'])) {
 		$CID = mysqli_real_escape_string($connection, $_POST['CIN']);
@@ -28,54 +29,49 @@ if ($admin == 1) {
 		}
 	}
 }
-elseif($admin==2){
-	
-	if (isset($_POST['NEWS_SUBMIT'])) {
-			$title = mysqli_real_escape_string($connection, $_POST['news_title']);
-			$about = mysqli_real_escape_string($connection, $_POST['about_news']);
-			
-			$Date = mysqli_real_escape_string($connection, $_POST['news_date']);
-			$news_catag = mysqli_real_escape_string($connection, $_POST['news_catag']);
+elseif ($admin == 2) {
+    if ((isset($_POST['NEWS_SUBMIT'])) && !empty($_FILES["file"]["name"])) {
+        $title = mysqli_real_escape_string($connection, $_POST['news_title']);
+        $about = mysqli_real_escape_string($connection, $_POST['About_news']);
+        $Date = mysqli_real_escape_string($connection, $_POST['news_date']);
+        $news_catag = mysqli_real_escape_string($connection, $_POST['catagory']);
+        $editor = mysqli_real_escape_string($connection, $_POST['auth_name']);
+        $Reporter = mysqli_real_escape_string($connection, $_POST['Reporter_name']);
+        $img_id = mysqli_real_escape_string($connection, $_POST['image_id']);
 
-			$editor = mysqli_real_escape_string($connection, $_POST['auth_name']);
-			$Reporter = mysqli_real_escape_string($connection, $_POST['Reporter_name']);
+        // Get the uploaded file's name and other information
+        $name = $_FILES['file']['name'];
+        $file_temp_path = $_FILES["file"]["tmp_name"];
 
-			$img_id = mysqli_real_escape_string($connection, $_POST['image_id']);
+        // Use finfo to get the MIME type
+        $file_info = finfo_open(FILEINFO_MIME_TYPE);
+        $file_mime = finfo_file($file_info, $file_temp_path);
 
-			$name = $_FILES['file']['name'];
-			$target_dir = "uploads/";
-			$target_file = $target_dir . basename($_FILES["file"]["name"]);
+        $allowed_ext = array(
+            "jpg" => "image/jpg",
+            "jpeg" => "image/jpeg",
+            "gif" => "image/gif",
+            "png" => "image/png"
+        );
 
-			$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-			$file_temp_path = $_FILES["file"]["tmp_name"];
+        if (in_array($file_mime, $allowed_ext)) {
+            // File is of an allowed type
+            $image_content = addslashes(file_get_contents($file_temp_path));
 
-			$allowed_ext = array("jpg" => "image/jpg",
-                            "jpeg" => "image/jpeg",
-                            "gif" => "image/gif",
-                            "png" => "image/png");
+            $sql = "INSERT INTO news_description(News_name, About_News, news_date, news_catagory, Editor_name, Reporter_name, Image_id, Image_data) 
+                    VALUES 
+                    ('$title', '$about', '$Date', '$news_catag', '$editor', '$Reporter', '$img_id', '".$image_content."')";
+            $result = $connection->query($sql);
 
-    		$file_mime = mime_content_type($file_temp_path);
-			if( in_array($file_mime , $allowed_ext) ){
-				$image_content = addslashes(file_get_contents($file_temp_path) );
-
-				$sql = "INSERT INTO news_description(News_name, About_News, news_date, news_catagory, Editor_name, Reporter_name, Image_id, Image_data) 
-				VALUES 
-				('$title', '$about', '$Date', '$news_catag', '$editor', '$Reporter', '$img_id', '".$image_content."')";
-				$result = $connection->query($sql);
-				if ($result == TRUE) {
-					header("Location:addnews.php");
-				}
-				else{
-					echo "<script>alert('COMMUNICATION TO THE SERVER IS DESTROYED PLEASE TRY AGAIN AFTER SOMETIME');window.location.href = 'addcatagory.php';</script>";
-				}
-
-			}
-
-			else{
-				echo "something error encountered with the Image";
-			}
-	}
-	else{
-		echo "Error in the main if statement";
-	}
+            if ($result == TRUE) {
+                header("Location:addnews.php");
+            } else {
+                echo "<script>alert('COMMUNICATION TO THE SERVER IS DESTROYED PLEASE TRY AGAIN AFTER SOMETIME');window.location.href = 'addcatagory.php';</script>";
+            }
+        } else {
+            echo "The uploaded file is not an allowed image type.";
+        }
+    } else {
+        echo "Error in the main if statement";
+    }
 }
