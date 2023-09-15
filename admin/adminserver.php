@@ -2,10 +2,8 @@
 include '../connection.php';
 $admin = $_GET['news'];
 if ($admin == 1) {
-	$CID = mysqli_real_escape_string($connection, $_POST['CIN']);
-
 	if (isset($_POST['CINsubmit'])) {
-
+		$CID = mysqli_real_escape_string($connection, $_POST['CIN']);
 		$checkQuery = "SELECT catagory_id FROM master_catagory WHERE catagory_id = '$CID'";
 		
 		$checkResult = $connection->query($checkQuery);
@@ -31,5 +29,7 @@ if ($admin == 1) {
 	}
 }
 elseif($admin==2){
-	
+	if (isset($_POST['CINsubmit'])) {
+		
+	}
 }
