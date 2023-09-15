@@ -1,6 +1,12 @@
 <?php
 require '../connection.php';
 include '../bootstarps/globalstyle.php';
+function getCurrentDate()
+{
+    return date("Y-m-d");
+}
+$currentDate = getCurrentDate();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,9 +16,6 @@ include '../bootstarps/globalstyle.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bharat Digital News</title>
     <link rel="stylesheet" href="style.css">
-
-
-
 </head>
 
 <body>
@@ -22,7 +25,7 @@ include '../bootstarps/globalstyle.php';
     <div class="most_recent_news" id="most_recent_news">
         <label>Trending Today in INDIA</label>
         <?php
-        $sql = "SELECT * FROM news_description order by news_date";
+        $sql = "SELECT * FROM news_description where news_date = '$currentDate'";
         $result = mysqli_query($connection, $sql);
         $offcanvasCount = 0;
         if (mysqli_num_rows($result) > 0) {
@@ -59,18 +62,20 @@ include '../bootstarps/globalstyle.php';
                                         ?>
                                     </p>
 
-                                    <button class="btn btn-primary view-news-btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop<?php echo $offcanvasCount; ?>">View News</button>
+                                    <button class="btn btn-primary view-news-btn" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasTop<?php echo $offcanvasCount; ?>">View News</button>
                                     <div class="offcanvas offcanvas-top" tabindex="-1"
                                         id="offcanvasTop<?php echo $offcanvasCount; ?>"
                                         aria-labelledby="offcanvasTopLabel<?php echo $offcanvasCount; ?>">
                                         <div class="offcanvas-header">
-                                            <h5 class="offcanvas-title"
-                                                id="offcanvasTopLabel<?php echo $offcanvasCount; ?>"><b><?php echo $row['News_name'];?></b></h5>
-                                            <button type="button" class="btn-close"
-                                                data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                            <h5 class="offcanvas-title" id="offcanvasTopLabel<?php echo $offcanvasCount; ?>"><b>
+                                                    <?php echo $row['News_name']; ?>
+                                                </b></h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                                aria-label="Close"></button>
                                         </div>
                                         <div class="offcanvas-body">
-                                            <?php echo $row['About_News'];?>
+                                            <?php echo $row['About_News']; ?>
                                         </div>
                                     </div>
 
@@ -78,7 +83,9 @@ include '../bootstarps/globalstyle.php';
                             </div>
                         </div>
                         <div class="card-footer text-body-secondary" id="time">
-                            <?php echo $row['news_date']; ?>
+                            <label>Published ON: <b>
+                                    <?php echo $row['news_date']; ?>
+                                </b></label>
                         </div>
                     </div>
                 </div>
@@ -89,7 +96,8 @@ include '../bootstarps/globalstyle.php';
         }
         ?>
     </div>
-<script src="scripts.js"></script>
+    <script src="scripts.js"></script>
+
 
 </body>
 
