@@ -59,7 +59,8 @@
             <input type="number" name="CIN" id="CIN">
             <br>
             <label>Select the catagory name</label>
-            <input type="text" id="catagory" placeholder="Enter the Category Name"><br>
+            <input type="text" id="catagory" placeholder="Enter the Category Name" name="CNAME"><br>
+
             <input type="submit" name="CINsubmit" id="CINsubmit" value="SUBMIT">
         </form>
     </div>
@@ -70,7 +71,7 @@
     const CINInput = document.getElementById("CIN");
     const catagoryInput = document.getElementById("catagory");
     const form = document.getElementById("method_form");
-    const maxCharacters = 10;
+    const maxCharacters = 20;
 
     form.addEventListener("submit", function (event) {
         const CINValue = CINInput.value;
