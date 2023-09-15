@@ -1,7 +1,6 @@
 <?php
 require '../connection.php';
 include '../bootstarps/globalstyle.php';
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,6 +20,7 @@ include '../bootstarps/globalstyle.php';
         <?php
         $sql = "SELECT * FROM news_description order by news_date";
         $result = mysqli_query($connection, $sql);
+        $offcanvasCount = 1;
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
                 ?>
@@ -39,15 +39,13 @@ include '../bootstarps/globalstyle.php';
                                         <?php echo $row['News_name']; ?>
                                     </b></h5>
 
-
                                 <div>
-
                                     <p class="card-text">
                                         <?php
                                         $aboutNews = $row['About_News'];
                                         $words = explode(' ', $aboutNews);
-                                        $wordLimit = 150;
-                                
+                                        $wordLimit = 120;
+
                                         if (count($words) > $wordLimit) {
                                             $limitedText = implode(' ', array_slice($words, 0, $wordLimit));
                                             echo $limitedText . '...';
@@ -57,7 +55,23 @@ include '../bootstarps/globalstyle.php';
                                         ?>
                                     </p>
 
-                                    <a href="#" class="btn btn-primary">View News</a>
+                                    <button class="btn btn-primary view-news-btn" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasTop<?php echo $offcanvasCount; ?>">View News</button>
+
+                                    <div class="offcanvas offcanvas-top" tabindex="-1"
+                                        id="offcanvasTop<?php echo $offcanvasCount; ?>"
+                                        aria-labelledby="offcanvasTopLabel<?php echo $offcanvasCount; ?>">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title"
+                                                id="offcanvasTopLabel<?php echo $offcanvasCount; ?>"><b><?php echo $row['News_name'];?></b></h5>
+                                            <button type="button" class="btn-close"
+                                                data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            <?php echo $row['About_News'];?>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -65,13 +79,23 @@ include '../bootstarps/globalstyle.php';
                             <?php echo $row['news_date']; ?>
                         </div>
                     </div>
+                </div>
 
-
-                    <?php
+                <?php
+                $offcanvasCount++; // Increment the unique identifier
             }
         }
         ?>
-        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll(".view-news-btn").forEach(function (button, index) {
+            button.addEventListener("click", function () {
+                var offcanvas = new bootstrap.Offcanvas(document.getElementById("offcanvasTop" + index));
+                offcanvas.toggle();
+            });
+        });
+    </script>
 </body>
 
 </html>
