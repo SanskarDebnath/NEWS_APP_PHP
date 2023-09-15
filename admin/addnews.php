@@ -1,3 +1,26 @@
+<?php 
+
+require_once 'connect.php';
+
+$sql="select * from mas_state";
+$ddlStateData = '';
+//-------- Procedural Approach ----------
+$result = mysqli_query($conn, $sql);
+if(mysqli_num_rows($result) > 0) {
+    while($row = mysqli_fetch_assoc($result)) { //while ($row = $result->fetch_assoc()) {
+        $ddlStateData = $ddlStateData.'<option value='.$row['scode'].'>'.$row['sname'].'</option>';
+    }  
+    
+    mysqli_free_result($result); //$result -> free_result(); //FREE the resultset
+} else {
+    // echo 'No details found';
+}
+
+mysqli_close($conn); // $conn->close();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,17 +45,7 @@
         <div class="Catgory&photos">
             <label>Select the Catagory of the News</label>
             <select name="catagory" class="catagory">
-            <option value="0">Default</option>
-            <option value="1">MOVIES</option>
-            <option value="2">WORLD</option>
-            <option value="3">Default</option>
-            <option value="4">Default</option>
-            <option value="5">Default</option>
-            <option value="6">Default</option>
-            <option value="7">Default</option>
-            <option value="8">Default</option>
-            <option value="9">Default</option>
-            <option value="10">Default</option>
+                <option value="0">--select--</option>
             </select>
         </div>
 
