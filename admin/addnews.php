@@ -43,9 +43,31 @@ if (mysqli_num_rows($result) > 0) {
 
             <label>Editor name</label>
             <input type="text" name="auth_name" id="auth_name"><br>
-            
+
             <label>Reporter name</label>
             <input type="text" name="auth_name" id="auth_name">
+        </div>
+
+        <div class="UploadImage">
+            <label>Select JPG/JPEG/PNG file for the News</label><br>
+            <input type="File" name="News_Image" id="News_Image">
+            
+            <?php
+            function generateRandomString($length = 15) {
+                $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                $randomString = '';
+            
+                for ($i = 0; $i < $length; $i++) {
+                    $randomString .= $characters[rand(0, strlen($characters) - 1)];
+                }
+            
+                return $randomString;
+            }
+            $randomString = generateRandomString();
+            // echo $randomString;
+            ?>
+            <input type="hidden" name="image_id" id="image_id" value="<?php echo$randomString; ?>">
+
         </div>
 
 
