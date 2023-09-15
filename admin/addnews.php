@@ -51,7 +51,7 @@ if (mysqli_num_rows($result) > 0) {
         <div class="UploadImage">
             <label>Select JPG/JPEG/PNG file for the News</label><br>
             <input type="File" name="News_Image" id="News_Image">
-            
+
             <?php
             function generateRandomString($length = 15) {
                 $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -64,7 +64,7 @@ if (mysqli_num_rows($result) > 0) {
                 return $randomString;
             }
             $randomString = generateRandomString();
-            // echo $randomString;
+            // echo $randomString
             ?>
             <input type="hidden" name="image_id" id="image_id" value="<?php echo$randomString; ?>">
 
