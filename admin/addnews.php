@@ -74,22 +74,4 @@ if (mysqli_num_rows($result) > 0) {
 </body>
 <script src="adminscripts.js"></script>
 
-<!-- <script>
-    function checkFileSize(input) {
-    const file = input.files[0]; // Get the selected file
-    if (!file) {
-        alert("Please select a file.");
-        input.value = ''; // Clear the input
-        return;
-    }
-
-    const maxSizeInBytes = 2 * 1024 * 1024; // 2MB
-
-    if (file.size > maxSizeInBytes) {
-        alert("File size exceeds the maximum allowed size (2MB). Please select a smaller file.");
-        input.value = ''; // Clear the input
-    }
-}
-</script> -->
-
 </html>

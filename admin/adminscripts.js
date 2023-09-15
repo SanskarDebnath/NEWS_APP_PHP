@@ -8,7 +8,7 @@ function checkFileSize(input) {
     if (!file) {
         alert("Please select a file.");
         input.value = ''; // Clear the input
-        return;
+        return;s
     }
 
     const maxSizeInBytes = 2 * 1024 * 1024; // 2MB
