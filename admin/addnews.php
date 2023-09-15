@@ -19,13 +19,11 @@ if (mysqli_num_rows($result) > 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin page</title>
     <link rel="stylesheet" href="adminstyle.css">
-    
+
     <script type="text/javascript">
         document.addEventListener("contextmenu", function(e) {
             e.preventDefault();
         });
-
-        // Prevent F12 key
         document.addEventListener("keydown", function(e) {
             if (e.key === "F12" || e.keyCode === 123) {
                 e.preventDefault();
