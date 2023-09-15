@@ -23,7 +23,7 @@ $currentDate = getCurrentDate();
         BHARAT DIGITAL NEWS
     </div>
     <div class="most_recent_news" id="most_recent_news">
-        <label>Trending Today in INDIA</label>
+        <label id="Trending">Trending Today in INDIA</label>
         <?php
         $sql = "SELECT * FROM news_description where news_date = '$currentDate'";
         $result = mysqli_query($connection, $sql);
