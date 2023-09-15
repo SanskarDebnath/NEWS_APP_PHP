@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+
         body {
             font-family: Arial, sans-serif;
             background-color: #f1f1f1;
@@ -94,6 +95,7 @@
             text-decoration: underline;
         }
     </style>
+    
 </head>
 
 <body>
