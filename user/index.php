@@ -31,30 +31,47 @@ include '../bootstarps/globalstyle.php';
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-4">
-                                <img src="data:image/jpeg;base64,<?php echo base64_encode($row['Image_data']); ?>" alt="News Image" class="img-fluid max-width-100">
+                                <img src="data:image/jpeg;base64,<?php echo base64_encode($row['Image_data']); ?>"
+                                    alt="News Image" class="img-fluid max-width-100">
                             </div>
                             <div class="col-md-8">
                                 <h5 class="card-title"><b>
                                         <?php echo $row['News_name']; ?>
                                     </b></h5>
-                                <p class="card-text">
-                                    <?php echo $row['About_News']; ?>
-                                </p>
-                                <a href="#" class="btn btn-primary">View News</a>
+
+
+                                <div>
+
+                                    <p class="card-text">
+                                        <?php
+                                        $aboutNews = $row['About_News'];
+                                        $words = explode(' ', $aboutNews);
+                                        $wordLimit = 150;
+                                
+                                        if (count($words) > $wordLimit) {
+                                            $limitedText = implode(' ', array_slice($words, 0, $wordLimit));
+                                            echo $limitedText . '...';
+                                        } else {
+                                            echo $aboutNews;
+                                        }
+                                        ?>
+                                    </p>
+
+                                    <a href="#" class="btn btn-primary">View News</a>
+                                </div>
                             </div>
                         </div>
+                        <div class="card-footer text-body-secondary" id="time">
+                            <?php echo $row['news_date']; ?>
+                        </div>
                     </div>
-                    <div class="card-footer text-body-secondary" id="time">
-                        <?php echo $row['news_date'];?>
-                    </div>
-                </div>
 
 
-                <?php
+                    <?php
             }
         }
         ?>
-    </div>
+        </div>
 </body>
 
 </html>
