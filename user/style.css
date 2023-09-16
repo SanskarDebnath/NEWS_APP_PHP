@@ -1,3 +1,15 @@
+/* Light Mode Styles */
+body.light-mode {
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: black;
+    color: white;
+}
+
 
 #preloader{
     background: #fff url(../assets/pics/preloader.gif) no-repeat center center;
@@ -10,7 +22,7 @@
     font-family: Brush Script MT;
     font-weight: bold;
     background-color: #ffffff;
-    color: rgb(242, 65, 0);
+    color: rgb(33, 137, 13);
 }
 
 
@@ -75,3 +87,7 @@ body {
 .btn {
     padding: .55rem 1.5rem .45rem;
   }
+
+
+
+  
