@@ -196,12 +196,12 @@ $currentDate = getCurrentDate();
                                     alt="News Image" class="img-fluid max-width-100">
                             </div>
                             <div class="col-md-8">
-                                <h5 class="card-title" style="font-family: 'FreeMono', OCR A Std;font-size: 25px; color:red;"><b>
+                                <h5 class="card-title" style="font-family: 'FreeMono', OCR A Std;font-size: 27px; color:red;"><b>
                                         <?php echo $row['News_name']; ?>
                                     </b></h5>
 
                                 <div>
-                                <p class="card-text" style="font-family: 'Apple Chancery', cursive;font-size: 15px;">
+                                <p class="card-text" style="font-family: 'Apple Chancery', cursive;font-size: 17px;">
                                         <?php
                                         $aboutNews = $row['About_News'];
                                         $words = explode(' ', $aboutNews);
@@ -228,7 +228,7 @@ $currentDate = getCurrentDate();
                                             <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
                                                 aria-label="Close"></button>
                                         </div>
-                                        <div class="offcanvas-body" style="font-family: 'Apple Chancery', cursive;font-size: 15px;">
+                                        <div class="offcanvas-body" style="font-family: 'Apple Chancery', cursive;font-size: 20px;">
                                             <?php echo $row['About_News']; ?>
                                         </div>
                                     </div>
