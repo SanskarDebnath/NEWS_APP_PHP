@@ -1,3 +1,19 @@
+
+#preloader{
+    background: #fff url(../assets/pics/preloader.gif) no-repeat center center;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
+.default_text {
+    font-family: Brush Script MT;
+    font-weight: bold;
+    background-color: #ffffff;
+    color: rgb(242, 65, 0);
+}
+
+
 body {
     background-color: #f8f9fa;
     font-family: Arial, sans-serif;
@@ -56,4 +72,6 @@ body {
     justify-content: center;
 
 }
-
+.btn {
+    padding: .55rem 1.5rem .45rem;
+  }
