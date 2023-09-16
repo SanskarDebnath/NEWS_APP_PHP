@@ -19,149 +19,161 @@ $currentDate = getCurrentDate();
 </head>
 
 <body>
-<div id="preloader"> 
-</div>
+    <div id="preloader">
+    </div>
 
-<script>
-    // JavaScript to hide the preloader when the page is fully loaded
-    window.addEventListener('load', function() {
-        var preloader = document.getElementById('preloader');
-        preloader.style.display = 'none';
-    });
-</script>
+    <script>
+        // JavaScript to hide the preloader when the page is fully loaded
+        window.addEventListener('load', function () {
+            var preloader = document.getElementById('preloader');
+            preloader.style.display = 'none';
+        });
+    </script>
 
 
     <!-- navbar -->
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <!-- Container wrapper -->
-  <div class="container-fluid">
-    <!-- Navbar brand -->
-    <a class="navbar-brand" href="#"><h4 class="default_text" id="default_text">Bharat Digital News</h4></a>
-
-    <!-- Toggle button -->
-    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
-      data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-      aria-label="Toggle navigation">
-      <i class="fas fa-bars text-light"></i>
-    </button>
-
-    <!-- Collapsible wrapper -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <!-- Left links -->
-      <ul class="navbar-nav me-auto d-flex flex-row mt-3 mt-lg-0">
-        <li class="nav-item text-center mx-2 mx-lg-1">
-          <a class="nav-link active" aria-current="page" href="#!">
-            <div>
-              <i class="fas fa-home fa-lg mb-1"></i>
-            </div>
-            <img width="26" height="26" src="https://img.icons8.com/material/26/home--v5.png" alt="home--v5"/>
-          </a>
-        </li>
-        <li class="nav-item text-center mx-2 mx-lg-1">
-          <a class="nav-link" href="#!">
-            <div>
-              <i class="far fa-envelope fa-lg mb-1"></i>
-              <span class="badge rounded-pill badge-notification bg-danger"></span>
-            </div>
-            <img width="26" height="26" src="https://img.icons8.com/glyph-neue/26/fire-element.png" alt="fire-element"/>
-          </a>
-        </li>
-        <li class="nav-item text-center mx-2 mx-lg-1">
-          <a class="nav-link" href="#!">
-            <div>
-              <i class="far fa-envelope fa-lg mb-1"></i>
-              <span class="badge rounded-pill badge-notification bg-danger"></span>
-            </div>
-            <img width="26" height="26" src="https://img.icons8.com/ios-filled/26/settings.png" alt="settings"/>
-          </a>
-        </li>
-        <li class="nav-item text-center mx-2 mx-lg-1">
-          <a class="nav-link" href="#!">
-            <div>
-              <i class="far fa-envelope fa-lg mb-1"></i>
-              <span class="badge rounded-pill badge-notification bg-danger"></span>
-            </div>
-            <img width="26" height="26" src="https://img.icons8.com/material/26/for-you.png" alt="for-you"/>
-          </a>
-        </li>
-        <li class="nav-item text-center mx-2 mx-lg-1">
-          <a class="nav-link" href="#!">
-            <div>
-              <i class="far fa-envelope fa-lg mb-1"></i>
-              <span class="badge rounded-pill badge-notification bg-danger"></span>
-            </div>
-            <img width="26" height="26" src="https://img.icons8.com/material/26/cloud--v1.png" alt="cloud--v1"/>
-          </a>
-        </li>
-
-
-      </ul>
-      <!-- Left links -->
-
-      <!-- Right links -->
-      <ul class="navbar-nav ms-auto d-flex flex-row mt-3 mt-lg-0">
-
-      <li class="nav-item text-center mx-2 mx-lg-1">
-            <a class="nav-link" href="#" id="full_screen">
-                <div>
-                    <i class="fas fa-bell fa-lg mb-1"></i>
-                    <span class="badge rounded-pill badge-notification bg-info"></span>
-                </div>
-                <img width="26" height="26" src="https://img.icons8.com/material/26/fit-to-width.png" alt="fit-to-width"/>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+            <!-- Navbar brand -->
+            <a class="navbar-brand" href="#">
+                <h4 class="default_text" id="default_text">Bharat Digital News</h4>
             </a>
-        </li>
+
+            <!-- Toggle button -->
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+                data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fas fa-bars text-light"></i>
+            </button>
+
+            <!-- Collapsible wrapper -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Left links -->
+                <ul class="navbar-nav me-auto d-flex flex-row mt-3 mt-lg-0">
+                    <li class="nav-item text-center mx-2 mx-lg-1">
+                        <a class="nav-link active" aria-current="page" href="#!">
+                            <div>
+                                <i class="fas fa-home fa-lg mb-1"></i>
+                            </div>
+                            <img width="26" height="26" src="https://img.icons8.com/material/26/home--v5.png"
+                                alt="home--v5" />
+                        </a>
+                    </li>
+                    <li class="nav-item text-center mx-2 mx-lg-1">
+                        <a class="nav-link" href="#!">
+                            <div>
+                                <i class="far fa-envelope fa-lg mb-1"></i>
+                                <span class="badge rounded-pill badge-notification bg-danger"></span>
+                            </div>
+                            <img width="26" height="26" src="https://img.icons8.com/glyph-neue/26/fire-element.png"
+                                alt="fire-element" />
+                        </a>
+                    </li>
+                    <li class="nav-item text-center mx-2 mx-lg-1">
+                        <a class="nav-link" href="#!">
+                            <div>
+                                <i class="far fa-envelope fa-lg mb-1"></i>
+                                <span class="badge rounded-pill badge-notification bg-danger"></span>
+                            </div>
+                            <img width="26" height="26" src="https://img.icons8.com/ios-filled/26/settings.png"
+                                alt="settings" />
+                        </a>
+                    </li>
+                    <li class="nav-item text-center mx-2 mx-lg-1">
+                        <a class="nav-link" href="#!">
+                            <div>
+                                <i class="far fa-envelope fa-lg mb-1"></i>
+                                <span class="badge rounded-pill badge-notification bg-danger"></span>
+                            </div>
+                            <img width="26" height="26" src="https://img.icons8.com/material/26/for-you.png"
+                                alt="for-you" />
+                        </a>
+                    </li>
+                    <li class="nav-item text-center mx-2 mx-lg-1">
+                        <a class="nav-link" href="#!">
+                            <div>
+                                <i class="far fa-envelope fa-lg mb-1"></i>
+                                <span class="badge rounded-pill badge-notification bg-danger"></span>
+                            </div>
+                            <img width="26" height="26" src="https://img.icons8.com/material/26/cloud--v1.png"
+                                alt="cloud--v1" />
+                        </a>
+                    </li>
 
 
-        <li class="nav-item text-center mx-2 mx-lg-1">
-            <a class="nav-link" href="#" id="dark_mode_toggle">
-                <div>
-                    <i class="fas fa-bell fa-lg mb-1"></i>
-                    <span class="badge rounded-pill badge-notification bg-info"></span>
-                </div>
-                <img width="26" height="26" src="https://img.icons8.com/material/26/bright-moon.png" alt="bright-moon"/>
-            </a>
-        </li>
+                </ul>
+                <!-- Left links -->
+
+                <!-- Right links -->
+                <ul class="navbar-nav ms-auto d-flex flex-row mt-3 mt-lg-0">
+
+                    <li class="nav-item text-center mx-2 mx-lg-1">
+                        <a class="nav-link" href="#" id="full_screen">
+                            <div>
+                                <i class="fas fa-bell fa-lg mb-1"></i>
+                                <span class="badge rounded-pill badge-notification bg-info"></span>
+                            </div>
+                            <img width="26" height="26" src="https://img.icons8.com/material/26/fit-to-width.png"
+                                alt="fit-to-width" />
+                        </a>
+                    </li>
 
 
-        <li class="nav-item text-center mx-2 mx-lg-1">
-            <a class="nav-link" href="#" id="chatbot-toggle">
-                <div>
-                    <i class="fas fa-bell fa-lg mb-1"></i>
-                    <span class="badge rounded-pill badge-notification bg-info"></span>
-                </div>
-                <img width="26" height="26" src="https://img.icons8.com/ios-glyphs/26/guest-male.png" alt="guest-male"/>
-            </a>
-        </li>
-
-        
-
+                    <li class="nav-item text-center mx-2 mx-lg-1">
+                        <a class="nav-link" href="#" id="dark_mode_toggle">
+                            <div>
+                                <i class="fas fa-bell fa-lg mb-1"></i>
+                                <span class="badge rounded-pill badge-notification bg-info"></span>
+                            </div>
+                            <img width="26" height="26" src="https://img.icons8.com/material/26/bright-moon.png"
+                                alt="bright-moon" />
+                        </a>
+                    </li>
 
 
-        <li class="nav-item text-center mx-2 mx-lg-1">
-          <a class="nav-link" href="#!">
-            <div>
-              <i class="fas fa-globe-americas fa-lg mb-1"></i>
-              <span class="badge rounded-pill badge-notification bg-success"></span>
+                    <li class="nav-item text-center mx-2 mx-lg-1">
+                        <a class="nav-link" href="#" id="chatbot-toggle">
+                            <div>
+                                <i class="fas fa-bell fa-lg mb-1"></i>
+                                <span class="badge rounded-pill badge-notification bg-info"></span>
+                            </div>
+                            <img width="26" height="26" src="https://img.icons8.com/ios-glyphs/26/guest-male.png"
+                                alt="guest-male" />
+                        </a>
+                    </li>
+
+
+
+
+
+                    <li class="nav-item text-center mx-2 mx-lg-1">
+                        <a class="nav-link" href="#!">
+                            <div>
+                                <i class="fas fa-globe-americas fa-lg mb-1"></i>
+                                <span class="badge rounded-pill badge-notification bg-success"></span>
+                            </div>
+                            <img width="26" height="26" src="https://img.icons8.com/material/26/globe--v1.png"
+                                alt="globe--v1" />
+                        </a>
+                    </li>
+                </ul>
+                <!-- Right links -->
+
+                <!-- Search form -->
+                <form class="d-flex input-group w-auto ms-lg-3 my-3 my-lg-0">
+                    <input type="search" class="form-control" placeholder="Search" aria-label="Search" />
+                    <button class="btn btn-primary" type="button" data-mdb-ripple-color="white">
+                        <img width="20" height="20" src="https://img.icons8.com/ios/40/search--v1.png"
+                            alt="search--v1" />
+                    </button>
+                </form>
             </div>
-            <img width="26" height="26" src="https://img.icons8.com/material/26/globe--v1.png" alt="globe--v1"/>
-          </a>
-        </li>
-      </ul>
-      <!-- Right links -->
+        </div>
+    </nav><br>
 
-      <!-- Search form -->
-      <form class="d-flex input-group w-auto ms-lg-3 my-3 my-lg-0">
-        <input type="search" class="form-control" placeholder="Search" aria-label="Search" />
-        <button class="btn btn-primary" type="button" data-mdb-ripple-color="white">
-        <img width="20" height="20" src="https://img.icons8.com/ios/40/search--v1.png" alt="search--v1"/>
-        </button>
-      </form>
-    </div>
-  </div>
-</nav><br>
-
-<!-- navbar -->
+    <!-- navbar -->
 
     <div class="most_recent_news" id="most_recent_news">
         <label id="Trending">Trending Today in INDIA</label>
@@ -239,8 +251,6 @@ $currentDate = getCurrentDate();
         ?>
     </div>
     <script src="scripts.js"></script>
-
-
 </body>
 
 </html>

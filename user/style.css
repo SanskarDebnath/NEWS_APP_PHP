@@ -11,13 +11,14 @@ body.dark-mode {
 }
 
 
-#preloader{
+#preloader {
     background: #fff url(../assets/pics/preloader.gif) no-repeat center center;
     height: 100vh;
     width: 100%;
     position: fixed;
     z-index: 100;
 }
+
 .default_text {
     font-family: Brush Script MT;
     font-weight: bold;
@@ -32,6 +33,7 @@ body {
     margin: 0;
     padding: 0;
 }
+
 #text {
     background-color: #343a40;
     color: white;
@@ -84,10 +86,7 @@ body {
     justify-content: center;
 
 }
+
 .btn {
     padding: .55rem 1.5rem .45rem;
-  }
-
-
-
-  
+}
