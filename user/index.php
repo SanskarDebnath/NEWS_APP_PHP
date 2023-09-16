@@ -178,7 +178,7 @@ $currentDate = getCurrentDate();
     <div class="most_recent_news" id="most_recent_news">
         <label id="Trending">Trending Today in INDIA</label>
         <?php
-        $sql = "SELECT * FROM news_description order by news_date";
+        $sql = "SELECT * FROM news_description order by news_date LIMIT 10";
         // $sql = "SELECT * FROM news_description where news_date = '$currentDate'";
         $result = mysqli_query($connection, $sql);
         $offcanvasCount = 0;
@@ -201,20 +201,20 @@ $currentDate = getCurrentDate();
                                     </b></h5>
 
                                 <div>
-                                    <p class="card-text">
+                                <p class="card-text" style="font-family: 'Apple Chancery', cursive;font-size: 15px;">
                                         <?php
                                         $aboutNews = $row['About_News'];
                                         $words = explode(' ', $aboutNews);
                                         $wordLimit = 70;
-
                                         if (count($words) > $wordLimit) {
                                             $limitedText = implode(' ', array_slice($words, 0, $wordLimit));
-                                            echo $limitedText . '....... To continue CLick on View News Button';
+                                            echo $limitedText . ' <strong>....... Continue Reading</strong>';
                                         } else {
-                                            echo $aboutNews;
+                                            // echo $aboutNews;
                                         }
                                         ?>
                                     </p>
+
 
                                     <button class="btn btn-primary view-news-btn" data-bs-toggle="offcanvas"
                                         data-bs-target="#offcanvasTop<?php echo $offcanvasCount; ?>">View News</button>
@@ -228,7 +228,7 @@ $currentDate = getCurrentDate();
                                             <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
                                                 aria-label="Close"></button>
                                         </div>
-                                        <div class="offcanvas-body">
+                                        <div class="offcanvas-body" style="font-family: 'Apple Chancery', cursive;font-size: 15px;">
                                             <?php echo $row['About_News']; ?>
                                         </div>
                                     </div>
@@ -236,7 +236,7 @@ $currentDate = getCurrentDate();
                                 </div>
                             </div>
                         </div>
-                        <div class="card-footer text-body-secondary" id="time">
+                        <div class="card-footer text-body-secondary" id="time" style="font-family: 'Apple Chancery', cursive;font-size: 15px;">
                             <label>Published ON: <b>
                                     <?php echo $row['news_date']; ?>
                                 </b></label>
