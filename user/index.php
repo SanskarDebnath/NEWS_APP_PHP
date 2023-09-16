@@ -196,7 +196,7 @@ $currentDate = getCurrentDate();
                                     alt="News Image" class="img-fluid max-width-100">
                             </div>
                             <div class="col-md-8">
-                                <h5 class="card-title"><b>
+                                <h5 class="card-title" style="font-family: 'FreeMono', OCR A Std;font-size: 25px; color:red;"><b>
                                         <?php echo $row['News_name']; ?>
                                     </b></h5>
 
@@ -217,7 +217,7 @@ $currentDate = getCurrentDate();
 
 
                                     <button class="btn btn-primary view-news-btn" data-bs-toggle="offcanvas"
-                                        data-bs-target="#offcanvasTop<?php echo $offcanvasCount; ?>">View News</button>
+                                        data-bs-target="#offcanvasTop<?php echo $offcanvasCount; ?>">View News</button><br>
                                     <div class="offcanvas offcanvas-top" tabindex="-1"
                                         id="offcanvasTop<?php echo $offcanvasCount; ?>"
                                         aria-labelledby="offcanvasTopLabel<?php echo $offcanvasCount; ?>">
