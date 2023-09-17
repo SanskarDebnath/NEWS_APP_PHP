@@ -12,6 +12,7 @@ $currentDate = getCurrentDate();
 <html lang="en">
 
 <head>
+    <link rel="shortcut icon" href="dbn.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bharat Digital News</title>
@@ -92,7 +93,7 @@ $currentDate = getCurrentDate();
                         </a>
                     </li>
                     <li class="nav-item text-center mx-2 mx-lg-1">
-                        <a class="nav-link" href="#!">
+                        <a class="nav-link" href="../weather/index.html" target="_blank">
                             <div>
                                 <i class="far fa-envelope fa-lg mb-1"></i>
                                 <span class="badge rounded-pill badge-notification bg-danger"></span>
