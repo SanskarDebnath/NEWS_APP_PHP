@@ -31,8 +31,6 @@ $currentDate = getCurrentDate();
         });
     </script>
 
-
-    <!-- navbar -->
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <!-- Container wrapper -->
@@ -145,10 +143,6 @@ $currentDate = getCurrentDate();
                         </a>
                     </li>
 
-
-
-
-
                     <li class="nav-item text-center mx-2 mx-lg-1">
                         <a class="nav-link" href="#!">
                             <div>
@@ -253,5 +247,4 @@ $currentDate = getCurrentDate();
     </div>
     <script src="scripts.js"></script>
 </body>
-
 </html>
