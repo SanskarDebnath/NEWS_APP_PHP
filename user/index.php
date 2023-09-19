@@ -245,6 +245,66 @@ $currentDate = getCurrentDate();
         }
         ?>
     </div>
+
+
+<br>
+
+<br>
+<div class="sports" id="sports">
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        <?php
+        $counter = 0;
+        $sqlsports = "SELECT * FROM news_description WHERE news_catagory = 10";
+        $sportsresults = mysqli_query($connection, $sqlsports);
+
+        if (mysqli_num_rows($sportsresults) > 0) {
+            while ($row = mysqli_fetch_assoc($sportsresults)) {
+                $counter++;
+                $collapseId = "collapseExample" . $counter;
+                ?>
+                <div class="col">
+                    <div class="card">
+                        <br>
+                        <center><img src="data:image/jpeg;base64,<?php echo base64_encode($row['Image_data']); ?>"
+                                class="card-img-top custom-image" alt="..."></center>
+                        <div class="card-body custom-card-body">
+                            <h5 class="card-title custom-title"><?php echo $row['News_name']; ?></h5>
+
+                            <p class="card-text"
+                                style="font-family: 'Apple Chancery', Verdana; font-size: 15px;">
+                                <?php
+                                $aboutNews = $row['About_News'];
+                                $words = explode(' ', $aboutNews);
+                                $wordLimit = 40;
+                                if (count($words) > $wordLimit) {
+                                    $limitedText = implode(' ', array_slice($words, 0, $wordLimit));
+                                    echo $limitedText . ' <strong>....... Continue Reading</strong>';
+                                } else {
+                                    echo $aboutNews;
+                                }
+                                ?>
+                            </p>
+                            <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#<?php echo $collapseId; ?>" aria-expanded="false"
+                                aria-controls="<?php echo $collapseId; ?>">
+                                Continue
+                            </button>
+                            </p>
+                            <div class="collapse" id="<?php echo $collapseId; ?>">
+                                <div class="card card-body"
+                                    style="font-family: 'Apple Chancery', Verdana; font-size: 18px;">
+                                    <?php echo $row['About_News']; ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php
+            }
+        }
+        ?>
+    </div>
+</div>
     <script src="scripts.js"></script>
 </body>
 </html>

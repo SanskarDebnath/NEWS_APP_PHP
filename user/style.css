@@ -90,3 +90,28 @@ body {
 .btn {
     padding: .55rem 1.5rem .45rem;
 }
+
+.custom-image {
+    width: 450px;
+    height: auto;
+  }
+  
+.custom-card-body {
+    padding: 20px;
+    margin: 10px;
+    background-color: #bdb8b8;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .custom-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .custom-text {
+    font-size: 1rem;
+    color: #000000;
+  }
+  
