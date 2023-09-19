@@ -293,7 +293,12 @@ $currentDate = getCurrentDate();
                             <div class="collapse" id="<?php echo $collapseId; ?>">
                                 <div class="card card-body"
                                     style="font-family: 'Apple Chancery', Verdana; font-size: 18px;">
-                                    <?php echo $row['About_News']; ?>
+                                    <?php echo $row['About_News']; ?><br><br>
+                                    <figure class="text-center">
+                                            <figcaption class="blockquote-footer">
+                                                Reported By: <cite title="Source Title"><?php echo $row['Reporter_name']; ?></cite>
+                                            </figcaption>
+                                            </figure>
                                 </div>
                             </div>
                         </div>
