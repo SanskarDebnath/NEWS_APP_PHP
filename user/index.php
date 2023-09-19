@@ -248,7 +248,7 @@ $currentDate = getCurrentDate();
 
 
 <br>
-
+<label id="Trending">Latest Sports News: Get all news coverage on different sports</label>
 <br>
 <div class="sports" id="sports">
     <div class="row row-cols-1 row-cols-md-2 g-4">
